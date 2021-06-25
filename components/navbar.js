@@ -1,35 +1,21 @@
 import Link from "next/link";
+import styles from './navbar.module.css'
 
 const Navbar = () => {
   return (
-    <>
-      <style jsx>
-        {`
-          ul {
-            display: flex;
-          }
-          ul li {
-            list-style: none;
-            padding: 10px;
-          }
-          ul li a {
-            color: #aaa;
-          }
-        `}
-      </style>
-      <ul>
-        <li>
+
+      <ul className={styles.navbarList}>
+        <li className={styles.listItem}>
           <Link href="/">
             <a>Home</a>
           </Link>
         </li>
-        <li>
+        <li className={styles.listItem}>
           <Link href="/courses">
             <a>Courses</a>
           </Link>
         </li>
       </ul>
-    </>
   );
 };
 

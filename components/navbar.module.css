@@ -1,0 +1,10 @@
+.navbarList {
+  display: flex;
+}
+.listItem {
+  list-style: none;
+  padding: 10px;
+}
+.listItem a {
+  color: #aaa;
+}
