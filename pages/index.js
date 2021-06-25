@@ -7,8 +7,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+//components
+import Posts from "./../components/posts";
+import Navbar from "./../components/navbar";
+
 function Home(props) {
-  console.log(props);
+  // console.log(props);
   // const [posts, setPosts] = useState([]);
   // useEffect(() => {
   //   axios
@@ -19,35 +23,14 @@ function Home(props) {
   return (
     <div>
       <h1>navbar</h1>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/courses">
-            <a>Courses</a>
-          </Link>
-        </li>
-      </ul>
+      <Navbar />
       <h1>Posts</h1>
-      <ul>
-        {props.posts.map((post) => {
-          return (
-            <li key={post.id}>
-              <Link href="/articles/[id]" as={`/articles/${post.id}`}>
-                <a>{post.title}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <Posts posts={props.posts} />
     </div>
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
   let posts = await res.data;
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Post = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <h2>{props.posts.title}</h2>
