@@ -22,6 +22,9 @@ function Home(props) {
 
   return (
     <div>
+      <Head>
+        <title>دوره آموزشی راکت</title>
+      </Head>
       <h1>navbar</h1>
       <Navbar />
       <h1>Posts</h1>
