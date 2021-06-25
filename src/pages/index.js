@@ -43,7 +43,7 @@ function Home(props) {
 }
 
 export async function getServerSideProps() {
-  let res = await axios.get("https://jsonplaceholder.typicode.com/post");
+  let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
   let errorCode = res.status===200 ? false : res.status;
   let posts = await res.data;
 
